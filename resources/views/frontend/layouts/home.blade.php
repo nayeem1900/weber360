@@ -39,7 +39,7 @@
 <body>
 
 <!-- ======= Top Bar ======= -->
-<section id="topbar" class="d-flex align-items-center">
+{{--<section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
             <i class="bi bi-envelope-fill"></i><a href="mailto:contact@weber360.com">contact@weber360.com</a>
@@ -52,7 +52,7 @@
             <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
     </div>
-</section>
+</section>--}}
 
 <!-- ======= Header ======= -->
 <header id="header" class="d-flex align-items-center">
@@ -106,7 +106,8 @@
 
                     </ul>
                 </li>
-                {{--<li><a class="nav-link scrollto" href="#about">About</a></li>--}}
+                <li><a class="nav-link scrollto" href="#about">About US</a></li>
+                <li><a class="nav-link scrollto" href="#about">Contact</a></li>
 
                 {{--<li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>--}}
                {{-- <li><a class="nav-link scrollto" href="#team">Team</a></li>--}}
@@ -137,58 +138,8 @@
 </header><!-- End Header -->
 
 <!-- ======= Hero Section ======= -->
-<section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-        <div class="carousel-inner" role="listbox">
-
-            <!-- Slide 1 -->
-            <div class="carousel-item active" style="background-image: url{{asset('public/frontend/web360/assets/img/slide/slide-1.jpg')}}">
-                            <div class="carousel-container">
-                    <div class="container">
-                        <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Green</span></h2>
-                        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                        <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item" style="background-image: url{{asset('public/frontend/web360/assets/img/slide/slide-2.jpg')}}">
-                <div class="carousel-container">
-                    <div class="container">
-                        <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                        <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item" style="background-image: url{{asset('public/frontend/web360/assets/img/slide/slide-3.jpg')}}">
-                <div class="carousel-container">
-                    <div class="container">
-                        <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                        <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-    </div>
-</section><!-- End Hero -->
+@include('frontend.layouts.slider')
+<!-- End Hero -->
 
 <main id="main">
 
@@ -229,7 +180,7 @@
 
             <div class="section-title">
                 <h2>About Us</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>{{ $abouts->desc }}</p>
             </div>
 
             <div class="row">

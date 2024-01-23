@@ -1,18 +1,19 @@
 @extends('backend.layouts.master')
 
 @section('content')
+
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Manage Slider</h1>
+                        <h1 class="m-0 text-dark">Manage About Details</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Slider</li>
+                            <li class="breadcrumb-item active">A Details</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -35,9 +36,9 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3>Slider List
+                                <h3>About Details
 
-                                        <a class="btn btn-success float-right btn-sm" href="{{route('sliders.add')}}"><i class="fa fa-plus-circle"></i> Add Slider</a>
+                                    <a class="btn btn-success float-right btn-sm" href="{{route('aboutd.add')}}"><i class="fa fa-plus-circle"></i> Add About Detail</a>
 
                                 </h3>
 
@@ -49,26 +50,30 @@
                                     <thead>
                                     <tr>
                                         <th>SL</th>
-                                        <th>Image</th>
+                                        <th>Description Detail</th>
+                                        <th>Description Image</th>
+
                                         <th>Action</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($allData as $key=>$slider)
+                                    @foreach($allData as $key=>$value)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td><img src="{{(!empty($slider->image))?url('public/upload/slider_images/'.$slider->image):url('public/upload/no_img.png')}}">
-                                            </td>
+                                            <td>{{($value->name)}}</td>
 
+                                            <td><img src="{{(!empty($value->image))?url('public/upload/web360_image/'.$value->image):url('public/upload/no_img.png')}}" style="width: 150px" height="160px" alt="no image"></td>
 
                                             <td>
 
-                                                <a title="Edit" class="btn btn-sm btn-primary" href="{{route('sliders.edit',$slider->id)}}"><i class="fa fa-edit"></i></a>
-                                                {{-- <a title="Delete" class="btn btn-sm btn-danger" href="{{route('users.delete',$user->id)}}"><i class="fa fa-trash"></i></a>--}}
-                                                <a href="#deleteModal{{$slider->id}}" data-toggle="modal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a title="Edit" class="btn btn-sm btn-primary" href="{{route('aboutd.edit',$value->id)}}"><i class="fa fa-edit"></i></a>
+
+
+                                                <a href="#deleteModal{{$value->id}}" data-toggle="modal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
 
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="deleteModal{{$slider->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="deleteModal{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -78,7 +83,7 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form action="{{route('sliders.delete',$slider->id)}}" method="post">
+                                                                <form action="{{route('aboutd.delete',$value->id)}}" method="post">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-danger" >Permanent Delete</button>
 
@@ -94,7 +99,10 @@
                                                     </div>
                                                 </div>
 
+
+
                                             </td>
+
 
                                         </tr>
                                     @endforeach

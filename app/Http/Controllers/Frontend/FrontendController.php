@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Model\AboutH;
 use App\Model\Carrier;
 use App\Model\Etender;
 use App\Model\Logo;
@@ -16,6 +17,7 @@ class FrontendController extends Controller
     public function index(){
         $data['logo']=Logo::first();
         $data['sliders']=Slider::all();
+        $data['abouts']=AboutH::first();
         return view ('frontend.layouts.home',$data);
 
     }

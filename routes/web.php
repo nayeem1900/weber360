@@ -103,7 +103,22 @@ Route::group(['middleware'=>'auth'],function (){
         Route::post('/delete/{id}', 'Backend\WdeController@delete')->name('weds.delete');
         Route::post('/download', 'Backend\EtenderController@download')->name('etenders.download');
     });
-
+    Route::prefix ('about')->group (function () {
+        //wde
+        Route::get('/view', 'Backend\AboutusController@view')->name('abouts.view');
+        Route::get('/add', 'Backend\AboutusController@add')->name('abouts.add');
+        Route::post('/store', 'Backend\AboutusController@store')->name('abouts.store');
+        Route::get('/edit/{id}', 'Backend\AboutusController@edit')->name('abouts.edit');
+        Route::post('/update/{id}', 'Backend\AboutusController@update')->name('abouts.update');
+        Route::post('/delete/{id}', 'Backend\AboutusController@delete')->name('abouts.delete');
+        //about_detail
+        Route::get('/aview', 'Backend\AboutusController@aview')->name('aboutd.view');
+        Route::get('/aadd', 'Backend\AboutusController@aadd')->name('aboutd.add');
+        Route::post('/astore', 'Backend\AboutusController@astore')->name('aboutd.store');
+        Route::get('/aedit/{id}', 'Backend\AboutusController@aedit')->name('aboutd.edit');
+        Route::post('/aupdate/{id}', 'Backend\AboutusController@aupdate')->name('aboutd.update');
+        Route::post('/adelete/{id}', 'Backend\AboutusController@adelete')->name('aboutd.delete');
+    });
     Route::prefix ('carriers')->group (function () {
         //slider
         Route::get('/view', 'Backend\CarrierController@view')->name('carriers.view');
