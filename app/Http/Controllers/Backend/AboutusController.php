@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Model\AboutDet;
 use App\Model\AboutH;
 use Illuminate\Http\Request;
 
@@ -60,7 +61,7 @@ class AboutusController extends Controller
     //
     public function aview(){
 
-        $data['allData']=AboutH::all();
+        $data['allData']=AboutDet::all();
         return view('backend.about.view-about-details', $data);
 
     }
@@ -70,6 +71,67 @@ class AboutusController extends Controller
         return view('backend.about.add-about-details');
 
     }
+    public function astore(Request $request){
+        $this->validate($request,[
 
+            'desc'=>'required|unique:about_h_s,desc',
+        ]);
+
+        $data =new AboutDet();
+        $data->desc=$request->desc;
+
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/web360_image'), $filename);
+            $data['image'] = $filename;
+        }
+
+        $data->save();
+        session()->flash('success',' AboutDescriptionupdate success');
+        return redirect()->route('aboutd.view');
+    }
+
+    public function aedit($id){
+
+        $editData=AboutDet::find($id);
+        return view('backend.wde.add-wde',compact('editData'));
+    }
+    public function aupdate(Request $request,$id){
+
+        $data =AboutDet::find($id);
+        $this->validate($request,[
+
+            'desc'=>'required|unique:about_dets,desc,'.$data->id
+        ]);
+
+
+        $data->desc=$request->desc;
+
+        if ($request->file('image')) {
+
+            $file = $request->file('image');
+
+
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/web360_image'), $filename);
+            $data['h_image'] = $filename;
+        }
+
+        $data->save();
+        session()->flash('success',' Description update success');
+        return redirect()->route('aboutd.view');
+    }
+    public function adelete($id){
+
+        $data=AboutDet::find($id);
+        if(file_exists('upload/web360_image/' .$data->image)AND !empty($data->image)){
+            unlink('public/upload/web360_image/' .$data->image);
+        }
+        $data->delete();
+
+        session()->flash('success', 'Description has deleted Successfully');
+        return redirect()->route('aboutd.view');
+    }
 
 }

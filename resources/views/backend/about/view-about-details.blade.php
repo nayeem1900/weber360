@@ -61,7 +61,7 @@
                                     @foreach($allData as $key=>$value)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{($value->name)}}</td>
+                                            <td>{{($value->desc)}}</td>
 
                                             <td><img src="{{(!empty($value->image))?url('public/upload/web360_image/'.$value->image):url('public/upload/no_img.png')}}" style="width: 150px" height="160px" alt="no image"></td>
 

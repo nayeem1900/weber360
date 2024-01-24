@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Model\AboutDet;
 use App\Model\AboutH;
 use App\Model\Carrier;
 use App\Model\Etender;
@@ -18,6 +19,7 @@ class FrontendController extends Controller
         $data['logo']=Logo::first();
         $data['sliders']=Slider::all();
         $data['abouts']=AboutH::first();
+        $data['aboutsd'] = AboutDet::all();
         return view ('frontend.layouts.home',$data);
 
     }

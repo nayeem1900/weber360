@@ -51,7 +51,7 @@
                                     <tr>
                                         <th>SL</th>
                                         <th>Description</th>
-                                        <th>Branch Image</th>
+                                        <th> Image</th>
 
                                         <th>Action</th>
 

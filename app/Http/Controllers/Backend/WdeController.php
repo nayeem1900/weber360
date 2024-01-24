@@ -64,7 +64,7 @@ public function view(){
 
             $filename = date('YmdHi') . $file->getClientOriginalName();
             $file->move(public_path('upload/images'), $filename);
-            $data['h_image'] = $filename;
+            $data['image'] = $filename;
         }
 
         $data->save();

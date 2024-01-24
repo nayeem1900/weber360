@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Manage Branch</h1>
+                        <h1 class="m-0 text-dark">Manage About Details</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Branch</li>
+                            <li class="breadcrumb-item active">About-Details</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -67,7 +67,7 @@
                                     <div class="form-group row">
                                         <label>description Image</label>
                                         <div class="col-md-4">
-                                            <input type="file" name="h_image" value="{{@$editData->image}}" class="form-control"id="h_image">
+                                            <input type="file" name="image" value="{{@$editData->image}}" class="form-control"id="image">
 
                                         </div>
                                     </div>

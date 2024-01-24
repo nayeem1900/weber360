@@ -5,7 +5,7 @@
 @endphp
 
 <section class="slider_part">
-    <div class="container">
+
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 @foreach($sliders as $key => $slider)
@@ -15,7 +15,7 @@
             <div class="carousel-inner">
                 @foreach($sliders as $slider)
                     <div class="carousel-item @if($count==0){ active }@endif">
-                        <img src="{{asset('public/upload/slider_images/'.$slider->image)}}" class="d-block w-100" alt="">
+                        <img src="{{asset('public/upload/slider_images/'.$slider->image)}}" class="d-block w-100" alt=""style="width: 100%">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 style="background-color: #5e37a6">{{$slider->h_name}}</h3>
                             <p style="background-color: black">{{$slider->p_name}}</p>
@@ -36,7 +36,7 @@
             </button>
         </div>
 
-    </div>
+
 
 
 </section>
