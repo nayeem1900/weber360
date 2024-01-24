@@ -119,6 +119,15 @@ Route::group(['middleware'=>'auth'],function (){
         Route::post('/aupdate/{id}', 'Backend\AboutusController@aupdate')->name('aboutd.update');
         Route::post('/adelete/{id}', 'Backend\AboutusController@adelete')->name('aboutd.delete');
     });
+    //Client Picture
+    Route::prefix ('client picture')->group (function () {
+    Route::get('/cview', 'Backend\ClientController@cview')->name('clogos.view');
+    Route::get('/cadd', 'Backend\ClientController@cadd')->name('clogos.add');
+    Route::post('/cstore', 'Backend\ClientController@cstore')->name('clogos.store');
+    Route::get('/cedit/{id}', 'Backend\ClientController@cedit')->name('clogos.edit');
+    Route::post('/cupdate/{id}', 'Backend\ClientController@cupdate')->name('clogos.update');
+    Route::post('/cdelete/{id}', 'Backend\ClientController@cdelete')->name('clogos.delete');
+    });
     Route::prefix ('carriers')->group (function () {
         //slider
         Route::get('/view', 'Backend\CarrierController@view')->name('carriers.view');

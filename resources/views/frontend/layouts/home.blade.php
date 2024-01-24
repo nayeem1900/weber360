@@ -136,6 +136,38 @@
             </div>
         </section><!-- End Our Clients Section -->
 
+    
+
+
+
+
+    {{-- <section id="clients" class="clients">
+         <div class="container">
+
+             <div class="section-title">
+                 <h2>Our Clients</h2>
+                 <p>WE Best service</p>
+             </div>
+
+             <div class="clients-slider swiper">
+                 <div class="swiper-wrapper align-items-center">
+
+
+                     <div class="swiper-slide">
+                         @foreach($clientps as $key=>$value)
+                         <img src="{{url('public/upload/web360_image/'.$value->image)}}" class="img-fluid" alt="">
+                     @endforeach
+                     </div>
+
+                 </div>
+
+                 <div class="swiper-pagination"></div>
+             </div>
+
+         </div>
+     </section>--}}
+
+
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
             <div class="container">

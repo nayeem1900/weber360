@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Model\AboutDet;
 use App\Model\AboutH;
+use App\Model\Backend\ClientP;
 use App\Model\Carrier;
 use App\Model\Etender;
 use App\Model\Logo;
@@ -20,6 +21,7 @@ class FrontendController extends Controller
         $data['sliders']=Slider::all();
         $data['abouts']=AboutH::first();
         $data['aboutsd'] = AboutDet::all();
+        $data['clientps'] = ClientP::all();
         return view ('frontend.layouts.home',$data);
 
     }
