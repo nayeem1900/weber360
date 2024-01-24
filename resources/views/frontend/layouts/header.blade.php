@@ -1,104 +1,86 @@
 <section class="header">
 
-	<div class="container">
+	<header id="header" class="d-flex align-items-center">
+		<div class="container d-flex align-items-center">
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><img src="{{url('public/upload/logo_images/'.$logo->image)}}"></a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="{{route('index')}}">Home</a>
-						</li>
+			<h1 class="logo me-auto"><a href="index.html">weber360.com</a></h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-						<li class="nav-item">
-							<a class="nav-link" href="">About US</a>
-						</li>
+			<nav id="navbar" class="navbar">
+				<ul>
+					<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+					<li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+						<ul>
+							<li><a href="#">Industrial Automation with NI Platform</a></li>
+							<li><a href="#">Embedded Firmware Development </a></li>
+							<li><a href="#">PCB Design & Development </a></li>
+							<li><a href="#">IoT Product & Software development</a></li>
+							<li><a href="#">Automated Test systems</a></li>
+							<li><a href="#">Hardware in Loop Test Systems</a></li>
+							<li><a href="#">Portable Test stations</a></li>
+							<li><a href="#">3D Design & Development</a></li>
+							<li><a href="#">Industrial Robotic Solutions</a></li>
+							<li><a href="#">Automotive Test systems Development</a></li>
+							<li><a href="#">Machine Vision Test Systems</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#"><span>Technology Expertise</span> <i class="bi bi-chevron-down"></i></a>
+						<ul>
+							<li><a href="#">LabVIEW</a></li>
+							<li><a href="#">Teststand </a></li>
+							<li><a href="#">3D Design </a></li>
+							<li><a href="#">PXI/cRIO/cDAQ</a></li>
+							<li><a href="#">Python</a></li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Services
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li ><a class="dropdown-item" style="color: black" href="{{route('wade')}}">Workflow Automation And Data Engineering </a></li>
-								<li ><a class="dropdown-item" style="color: black" href="">Software Product Engineering</a></li>
-								<li ><a class="dropdown-item" style="color: black" href="">Enterprise Scale Platforms and Framework Development</a></li>
-								<li ><a class="dropdown-item" style="color: black" href="">Applied AI Solutions</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#"><span>Manufacturing Capabilities</span> <i class="bi bi-chevron-down"></i></a>
+						<ul>
+							<li><a href="#">Injection Molding</a></li>
+							<li><a href="#">Aluminium Profiles Stucture </a></li>
+							<li><a href="#">19 inch Server Rack Integration </a></li>
+							<li><a href="#">Portable CybeDeck Flightcase</a></li>
+							<li><a href="#">Vision Inspection Darkroom Setup</a></li>
 
-								{{--<li><hr class="dropdown-divider"><strong style="padding-left: 10px;background-color:green;opacity: 1;">Organizational Structure</strong></li>
-								<li><a class="dropdown-item" href="{{route('foundationcommittee')}}">Foundation Committees</a></li>
-								<li><a class="dropdown-item" href="{{route('executivecommittee')}}">Executive Committee</a></li>
-								<li><a class="dropdown-item" href="{{route('auditcommittee')}}">Audit Committee</a></li>
-								<li><a class="dropdown-item" href="{{route('hospitalcommittee')}}">Hospital Committee</a></li>
-								<li><a class="dropdown-item" href="{{route('communityhospitalcommittee')}}">Community Hospital Committee</a></li>
-								<li><a class="dropdown-item" href="{{route('communityhospitalboard')}}">Islami Bank Community Hospitals Board</a></li>
-								<li><a class="dropdown-item" href="">Executive Committee of Islami Bank Health Educational Institutions</a></li>
-								<li><a class="dropdown-item" href="{{route('healtheducationcommittee')}}">Education,Health Education & Social Work Committee</a></li>
---}}
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#"><span>Download</span> <i class="bi bi-chevron-down"></i></a>
+						<ul>
+							<li><a href="#">Product Services Brochure</a></li>
 
-							</ul>
-						</li>
+						</ul>
+					</li>
+					<li><a class="nav-link scrollto" href="#about">About US</a></li>
+					<li><a class="nav-link scrollto" href="#about">Contact</a></li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Technology Expertise
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li ><a class="dropdown-item" style="color: black" href="">LabView</a></li>
-								<li ><a class="dropdown-item" style="color: black" href="">Full Stack Vevelopment</a></li>
+					{{--<li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>--}}
+					{{-- <li><a class="nav-link scrollto" href="#team">Team</a></li>--}}
+					{{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                         <ul>
+                             <li><a href="#">Drop Down 1</a></li>
+                             <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                 <ul>
+                                     <li><a href="#">Deep Drop Down 1</a></li>
+                                     <li><a href="#">Deep Drop Down 2</a></li>
+                                     <li><a href="#">Deep Drop Down 3</a></li>
+                                     <li><a href="#">Deep Drop Down 4</a></li>
+                                     <li><a href="#">Deep Drop Down 5</a></li>
+                                 </ul>
+                             </li>
+                             <li><a href="#">Drop Down 2</a></li>
+                             <li><a href="#">Drop Down 3</a></li>
+                             <li><a href="#">Drop Down 4</a></li>
+                         </ul>
+                     </li>--}}
+					{{-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                     <li><a class="getstarted scrollto" href="#about">Get Started</a></li>--}}
+				</ul>
+				<i class="bi bi-list mobile-nav-toggle"></i>
+			</nav><!-- .navbar -->
 
-							</ul>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Products
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li ><a class="dropdown-item" style="color: black" href="">Mavis</a></li>
-								<li ><a class="dropdown-item" style="color: black" href="">Digital Product Validation Solutions</a></li>
-								<li><a class="dropdown-item" href="#">DIVE-Waveform Analysis</a></li>
-								<li><a class="dropdown-item" href="#">Protocol Analyzer Solutions</a></li>
-							</ul>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Company  </a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#"> About Solution </a></li>
-								<li><a class="dropdown-item" href="#"> News & Events &raquo; </a>
-									<ul class="submenu dropdown-menu">
-										<li><a class="dropdown-item" href="#">Corporate Social Responsibility</a></li>
-
-										<li><a class="dropdown-item" href="#">News Letter</a></li>
-										<li><a class="dropdown-item" href="#">Events</a></li>
-									</ul>
-								</li>
-								<li><a class="dropdown-item" href="#"> Blogs </a></li>
-								<li><a class="dropdown-item" href="#"> Case Studies </a></li>
-								<li><a class="dropdown-item" href="#"> Leadership Team </a></li>
-								<li><a class="dropdown-item" href="#"> Careers &raquo; </a>
-									<ul class="submenu dropdown-menu">
-										<li><a class="dropdown-item" href="#">Job Opening</a></li>
-										<li><a class="dropdown-item" href="#">Employee Value Proposition</a></li>
-
-									</ul>
-								</li>
-								<li><a class="dropdown-item" href="#">Privicy Policy</a></li>
-
-							</ul>
-						<li class="nav-item">
-							<a class="nav-link" href="{{route('contact')}}">Contract US</a>
-						</li>
-
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-
-	</div>
+		</div>
+	</header>
 
 
 

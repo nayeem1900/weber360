@@ -1,147 +1,90 @@
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <title>weber360.com</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet"type="text/css"href="{{asset('public/frontend/css/customized.css')}}">
-    <link rel="stylesheet"type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
+    <!-- Favicons -->
+    <link href="{{asset('public/frontend/web360/assets/img/favicon.png')}}" rel="icon">
+    <link href="{{asset('public/frontend/web360/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
-    <style type="text/css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-        /* ============ desktop view ============ */
-        @media all and (min-width: 992px) {
+    <!-- Vendor CSS Files -->
+    <link href="{{asset('public/frontend/web360/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/web360/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/web360/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/web360/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/web360/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/web360/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
-            .dropdown-menu li{
-                position: relative;
-            }
-            .dropdown-menu .submenu{
-                display: none;
-                position: absolute;
-                left:100%; top:-7px;
-            }
-            .dropdown-menu .submenu-left{
-                right:100%; left:auto;
-            }
+    <!-- Template Main CSS File -->
+    <link href="{{asset('public/frontend/web360/assets/css/style.css')}}" rel="stylesheet">
 
-            .dropdown-menu > li:hover{ background-color: #f1f1f1 }
-            .dropdown-menu > li:hover > .submenu{
-                display: block;
-            }
-        }
-        /* ============ desktop view .end// ============ */
-
-        /* ============ small devices ============ */
-        @media (max-width: 991px) {
-
-            .dropdown-menu .dropdown-menu{
-                margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
-            }
-
-        }
-        /* ============ small devices .end// ============ */
-
-    </style>
-
-
-
-
-      <script type="text/javascript">
-//	window.addEventListener("resize", function() {
-//		"use strict"; window.location.reload();
-//	});
-
-
-          document.addEventListener("DOMContentLoaded", function(){
-
-
-              /////// Prevent closing from click inside dropdown
-              document.querySelectorAll('.dropdown-menu').forEach(function(element){
-                  element.addEventListener('click', function (e) {
-                      e.stopPropagation();
-                  });
-              })
-
-
-
-              // make it as accordion for smaller screens
-              if (window.innerWidth < 992) {
-
-                  // close all inner dropdowns when parent is closed
-                  document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
-                      everydropdown.addEventListener('hidden.bs.dropdown', function () {
-                          // after dropdown is hidden, then find all submenus
-                          this.querySelectorAll('.submenu').forEach(function(everysubmenu){
-                              // hide every submenu as well
-                              everysubmenu.style.display = 'none';
-                          });
-                      })
-                  });
-
-                  document.querySelectorAll('.dropdown-menu a').forEach(function(element){
-                      element.addEventListener('click', function (e) {
-
-                          let nextEl = this.nextElementSibling;
-                          if(nextEl && nextEl.classList.contains('submenu')) {
-                              // prevent opening link if link needs to open dropdown
-                              e.preventDefault();
-                              console.log(nextEl);
-                              if(nextEl.style.display == 'block'){
-                                  nextEl.style.display = 'none';
-                              } else {
-                                  nextEl.style.display = 'block';
-                              }
-
-                          }
-                      });
-                  })
-              }
-              // end if innerWidth
-
-          });
-      // DOMContentLoaded  end
-
-
-
-
-
-  </script>
-
-
+    <!-- =======================================================
+    * Template Name: Green
+    * Updated: Jan 09 2024 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
 </head>
-{{--website body--}}
-<section class="body">
-    <div class="container">
-        <!--    <div class="col-md-12">-->
-        <body>
-        <div class="container">
-            @include('frontend.layouts.header')
+
+<body>
+
+<!-- ======= Top Bar ======= -->
+{{--<section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-envelope-fill"></i><a href="mailto:contact@weber360.com">contact@weber360.com</a>
+            <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55
         </div>
-        <div class="container">
-            @yield('content')
-        </div> </br>
-        <div class="container">
-            @include('frontend.layouts.footer')
+        <div class="social-links d-none d-md-block">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
-        <script src="{{asset('public/frontend/js/proper.js')}}" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-
-
-        <script src="{{asset('public/frontend/js/bootstrap.js')}}" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-        <script src="{{asset('public/backend/js/handlebars.min-v4.7.6.js')}}"></script>
-        </body>
-
-        <!--  </div>-->
-
-
-
-
     </div>
+</section>--}}
 
-</section>
+<!-- ======= Header ======= -->
+@include('frontend.layouts.header')<!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+
+<!-- End Hero -->
+
+<main id="main">
+
+    @yield('content')
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+@include('frontend.layouts.footer')<!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{{asset('public/frontend/web360/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('public/frontend/web360/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+<script src="{{asset('public/frontend/web360/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('public/frontend/web360/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('public/frontend/web360/assets/vendor/php-email-form/validate.js')}}"></script>
+
+<!-- Template Main JS File -->
+<script src="{{asset('public/frontend/web360/assets/js/main.js')}}"></script>
+
+</body>
 
 </html>
