@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2024 at 01:42 PM
+-- Generation Time: Jan 24, 2024 at 11:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -18,8 +18,55 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `nur`
+-- Database: `web360`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_dets`
+--
+
+CREATE TABLE `about_dets` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `desc` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=inactive,1=active',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `about_dets`
+--
+
+INSERT INTO `about_dets` (`id`, `desc`, `image`, `created_by`, `updated_by`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'ddddddddd', '202401240511sl3.png', NULL, NULL, 1, '2024-01-23 23:11:11', '2024-01-23 23:11:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_h_s`
+--
+
+CREATE TABLE `about_h_s` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `desc` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=inactive,1=active',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `about_h_s`
+--
+
+INSERT INTO `about_h_s` (`id`, `desc`, `created_by`, `updated_by`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'testtesttest', NULL, NULL, 1, '2024-01-23 02:49:59', '2024-01-23 02:49:59');
 
 -- --------------------------------------------------------
 
@@ -47,6 +94,29 @@ CREATE TABLE `carriers` (
 INSERT INTO `carriers` (`id`, `t_date`, `deadline`, `title`, `t_download`, `created_by`, `updated_by`, `status`, `created_at`, `updated_at`) VALUES
 (5, '2021-06-30', '2021-07-15', 'Circular of IBH', '202106301323Circular of IBH.pdf.jpg', 1, NULL, 1, '2021-06-30 18:23:05', '2021-06-30 18:23:05'),
 (6, '2021-07-12', '2021-07-31', 'Circular of IBIT', '202107120957Circular of IBIT.jpg', 1, 1, 1, '2021-07-12 14:57:27', '2021-07-12 15:02:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_p_s`
+--
+
+CREATE TABLE `client_p_s` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `client_p_s`
+--
+
+INSERT INTO `client_p_s` (`id`, `image`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(2, '202401240927client-5.png', 1, NULL, '2024-01-24 03:27:11', '2024-01-24 03:27:11'),
+(3, '202401240929clogo.png', 1, NULL, '2024-01-24 03:29:47', '2024-01-24 03:29:47');
 
 -- --------------------------------------------------------
 
@@ -135,7 +205,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2021_03_31_055159_create_sliders_table', 6),
 (9, '2021_03_31_074543_create_etenders_table', 7),
 (10, '2021_04_13_085942_create_carriers_table', 8),
-(13, '2024_01_21_100719_create_wdes_table', 9);
+(13, '2024_01_21_100719_create_wdes_table', 9),
+(14, '2024_01_23_071436_create_about_h_s_table', 10),
+(15, '2024_01_23_094357_create_about_dets_table', 11),
+(16, '2024_01_24_081449_create_client_p_s_table', 12);
 
 -- --------------------------------------------------------
 
@@ -169,9 +242,9 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `image`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(21, '202401210538sl1.png', 1, NULL, '2024-01-20 23:38:11', '2024-01-20 23:38:11'),
-(22, '202401210538sl2.png', 1, NULL, '2024-01-20 23:38:27', '2024-01-20 23:38:27'),
-(23, '202401210538sl3.png', 1, NULL, '2024-01-20 23:38:40', '2024-01-20 23:38:40');
+(32, '202401240401baner1.jpg', 1, NULL, '2024-01-23 22:01:33', '2024-01-23 22:01:33'),
+(33, '202401240401baner3.jpg', 1, NULL, '2024-01-23 22:01:47', '2024-01-23 22:01:47'),
+(34, '202401240402baner2.jpg', 1, NULL, '2024-01-23 22:02:06', '2024-01-23 22:02:06');
 
 -- --------------------------------------------------------
 
@@ -228,16 +301,34 @@ CREATE TABLE `wdes` (
 --
 
 INSERT INTO `wdes` (`id`, `desc`, `image`, `created_by`, `updated_by`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'ইসলামী ব্যাংক বাংলাদেশ। ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।ইসলামী ব্যাংক বাংলাদেশ।মমমমমমমমমইসলামী ব্যাংক বাংলাদেশ।', '202401211031s1.png', NULL, NULL, 1, '2024-01-21 04:31:26', '2024-01-21 06:14:42');
+(4, 'ইসলামী ব্যাংক ফাউন্ডেশনের মাননীয় চেয়ারম্যান প্রফেসর ডা. কাজী শহিদুল আলম গোপালগঞ্জে বাংলাদেশের স্থপতি, জাতিরপিতা বঙ্গবন্ধু শেখ মুজিবুর রহমান-এর মাজার জিয়ারত করেন এবং পুষ্পস্তবক', '202401240506sl2.png', NULL, NULL, 1, '2024-01-23 23:06:06', '2024-01-23 23:06:06');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `about_dets`
+--
+ALTER TABLE `about_dets`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `about_h_s`
+--
+ALTER TABLE `about_h_s`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `carriers`
 --
 ALTER TABLE `carriers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `client_p_s`
+--
+ALTER TABLE `client_p_s`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -294,10 +385,28 @@ ALTER TABLE `wdes`
 --
 
 --
+-- AUTO_INCREMENT for table `about_dets`
+--
+ALTER TABLE `about_dets`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `about_h_s`
+--
+ALTER TABLE `about_h_s`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `carriers`
 --
 ALTER TABLE `carriers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `client_p_s`
+--
+ALTER TABLE `client_p_s`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `etenders`
@@ -321,13 +430,13 @@ ALTER TABLE `logos`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -339,7 +448,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wdes`
 --
 ALTER TABLE `wdes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
